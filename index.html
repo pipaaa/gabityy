@@ -46,12 +46,25 @@
             transform: translate(-50%, -50%);
             z-index: 1;
         }
+
+        #logo {
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
     </style>
 </head>
 <body>
     <div id="snowflakes"></div>
     <div id="loading-spinner">
-        <img src="https://loading.io/spinners/double-ring/lg.double-ring-spinner.gif" alt="Cargando...">
+        <iframe src="https://giphy.com/embed/3o7bu3XilJ5BOiSGic" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+    </div>
+
+    <!-- Agregar el logo -->
+    <div id="logo">
+        <img src="logo.png" alt="Logo" width="100">
     </div>
 
     <script>
