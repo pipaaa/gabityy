@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargando...</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #snowflakes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .flake {
+            position: absolute;
+            background-color: #fff;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            animation: falling infinite linear;
+            pointer-events: none;
+        }
+
+        @keyframes falling {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+
+        #loading-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            color: #fff;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="snowflakes"></div>
+    <div id="loading-message">Cargando...</div>
+
+    <script>
+        // Agregar copos de nieve al fondo
+        const snowflakesContainer = document.getElementById('snowflakes');
+        for (let i = 0; i < 50; i++) {
+            const flake = document.createElement('div');
+            flake.className = 'flake';
+            flake.style.left = Math.random() * 100 + 'vw';
+            flake.style.animationDuration = Math.random() * 2 + 2 + 's';
+            snowflakesContainer.appendChild(flake);
+        }
+
+        // Redirigir a la página principal después de 5 segundos
+        setTimeout(() => {
+            window.location.href = 'https://sites.google.com/view/gabity/pagina-principal';
+        }, 5000);
+    </script>
+</body>
+</html>
